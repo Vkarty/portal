@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+        <head>
+            <link rel="shortcut icon" href="https://cdn.codechef.com/favicon.ico" type="image/x-icon" />
+            <title>SIH</title>
+            <meta charset="utf-8" />
+            <meta name="description" content='Learn computer science with interactive and practical courses on Beginner DSA' />
+            <meta name="og:image" content="https://cdn.codechef.com/sites/all/themes/abessive/cc-logo.png" />
+            <meta name="og:type" content="website" />
+            <meta name="theme-color" content="#000000" />
+            <link rel="stylesheet" href="./sample.css">
+          <!--  <script>
+                window.CDN_URL = 'https://cdn.codechef.com';
+                window.csrfToken = "b4dd3e55a4cf78f61938874bce7a6d91a80144c6449faf63a3f35a379e8427dc";
+                if (
+                    (['pro', 'contests'].includes(window.location.pathname.split('/').filter(Boolean).pop())) ||
+                    (['learn', 'games', 'viewsolution',
+                        'submit',
+                        'practice', 'dashboard', 'getting-started', 'assess', 'college-program', 'practice-old'
+                    ].includes(window.location.pathname.split('/').filter(Boolean)[0])) ||
+                    (['submit'].includes(window.location.pathname.split('/').filter(Boolean)[1])) ||
+                    (['status'].includes(window.location.pathname.split('/').filter(Boolean).slice(-2, -1).pop())) || [
+                        // Regex to match the practice and contest submit routes
+                        /^\/(submit\/([A-Z]+[A-Z0-9_]*)+|problems\/([A-Z]+[A-Z0-9_]*)+|([A-Z]+[A-Z0-9_]*)+\/submit\/([A-Z]+[A-Z0-9_]*)+|([A-Z]+[A-Z0-9_]*)+\/problems\/([A-Z]+[A-Z0-9_]*)+)$/
+                    ].some((regexp) => (regexp.test(window.location.pathname)))
+                ) {
+                    const metaElement = document.createElement('meta');
+                    metaElement.setAttribute('name', 'viewport');
+                    metaElement.setAttribute('content', 'width=device-width, initial-scale=1');
+                    document.head.appendChild(metaElement);
+                }
+                (function(w, d, s, l, i) {
+                    w[l] = w[l] || [];
+                    w[l].push({
+                        'gtm.start': new Date().getTime(),
+                        event: 'gtm.js'
+                    });
+                    var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s),
+                        dl = l != 'dataLayer' ? '&l=' + l : '';
+                    j.async = true;
+                    j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                    f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-TV5X2M');
+            </script>
+            <script type="module" crossorigin src="https://static.codechef.com/build/react2/assets/index.ef9fe7b6.js"></script>
+            <link rel="stylesheet" href="https://static.codechef.com/build/react2/assets/index.45c545b7.css">
+        </head>
+        
+        <body style >
+            <noscript>You need to enable JavaScript to run this app.</noscript>
+            <div id="root"></div>
+            <script>
+                if (window.location.pathname.split('/')[1] === 'pro') {
+                    // const razorPay = document.createElement('script');
+                    // razorPay.setAttribute('src', 'https://checkout.razorpay.com/v1/checkout.js');
+                    // document.head.appendChild(razorPay);
+        
+                    const instamojo = document.createElement('script');
+                    instamojo.setAttribute('src', 'https://js.instamojo.com/v1/checkout.js');
+                    document.head.appendChild(instamojo);
+        
+                }
+                if (window.location.pathname.split('/')[1] !== 'games') {
+                    const scriptElement = document.createElement('script');
+                    scriptElement.setAttribute('src',
+                        "/sites/all/modules/codechef_alerts/codechef_alerts.js?v=649c43b6894169b33b5557aa0374459d"
+                    );
+                    document.body.appendChild(scriptElement);
+                }
+            </script>
+            <script type="text/javascript" src="/sites/all/themes/mallow/src/js/cookies.js?v=c0c952b5f5af42bd78098f00c77cfa63"></script>
+        
+        
+            <style data-jss="" data-meta="MuiSvgIcon">
+                .MuiSvgIcon-root {
+                  fill: currentColor;
+                  width: 1em;
+                  height: 1em;
+                  display: inline-block;
+                  font-size: 1.5rem;
+                  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                  flex-shrink: 0;
+                  user-select: none;
+                }
+                .MuiSvgIcon-colorPrimary {
+                  color: #3f51b5;
+                }
+                .MuiSvgIcon-colorSecondary {
+                  color: #f50057;
+                }
+                .MuiSvgIcon-colorAction {
+                  color: rgba(0, 0, 0, 0.54);
+                }
+                .MuiSvgIcon-colorError {
+                  color: #f44336;
+                }
+                .MuiSvgIcon-colorDisabled {
+                  color: rgba(0, 0, 0, 0.26);
+                }
+                .MuiSvgIcon-fontSizeInherit {
+                  font-size: inherit;
+                }
+                .MuiSvgIcon-fontSizeSmall {
+                  font-size: 1.25rem;
+                }
+                .MuiSvgIcon-fontSizeLarge {
+                  font-size: 2.1875rem;
+                }
+                </style>
+        
+        <style data-jss="" data-meta="MuiBackdrop">
+            .MuiBackdrop-root {
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              display: flex;
+              z-index: -1;
+              position: fixed;
+              align-items: center;
+              justify-content: center;
+              background-color: rgba(0, 0, 0, 0.5);
+              -webkit-tap-highlight-color: transparent;
+            }
+            .MuiBackdrop-invisible {
+              background-color: transparent;
+            }
+            </style>
+        
+        <style data-jss="" data-meta="MuiLinearProgress">
+            .MuiLinearProgress-root {
+              height: 4px;
+              overflow: hidden;
+              position: relative;
+            }
+            @media print {
+              .MuiLinearProgress-root {
+                -webkit-print-color-adjust: exact;
+              }
+            }
+            .MuiLinearProgress-colorPrimary {
+              background-color: rgb(182, 188, 226);
+            }
+            .MuiLinearProgress-colorSecondary {
+              background-color: rgb(251, 158, 191);
+            }
+            .MuiLinearProgress-buffer {
+              background-color: transparent;
+            }
+            .MuiLinearProgress-query {
+              transform: rotate(180deg);
+            }
+            .MuiLinearProgress-dashed {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              animation: MuiLinearProgress-keyframes-buffer 3s infinite linear;
+              margin-top: 0;
+            }
+            .MuiLinearProgress-dashedColorPrimary {
+              background-size: 10px 10px;
+              background-image: radial-gradient(rgb(182, 188, 226) 0%, rgb(182, 188, 226) 16%, transparent 42%);
+              background-position: 0 -23px;
+            }
+            .MuiLinearProgress-dashedColorSecondary {
+              background-size: 10px 10px;
+              background-image: radial-gradient(rgb(251, 158, 191) 0%, rgb(251, 158, 191) 16%, transparent 42%);
+              background-position: 0 -23px;
+            }
+            .MuiLinearProgress-bar {
+              top: 0;
+              left: 0;
+              width: 100%;
+              bottom: 0;
+              position: absolute;
+              transition: transform 0.2s linear;
+              transform-origin: left;
+            }
+            .MuiLinearProgress-barColorPrimary {
+              background-color: #3f51b5;
+            }
+            .MuiLinearProgress-barColorSecondary {
+              background-color: #f50057;
+            }
+            .MuiLinearProgress-bar1Indeterminate {
+              width: auto;
+              animation: MuiLinearProgress-keyframes-indeterminate1 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+            }
+            .MuiLinearProgress-bar1Determinate {
+              transition: transform .4s linear;
+            }
+            .MuiLinearProgress-bar1Buffer {
+              z-index: 1;
+              transition: transform .4s linear;
+            }
+            .MuiLinearProgress-bar2Indeterminate {
+              width: auto;
+              animation: MuiLinearProgress-keyframes-indeterminate2 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) 1.15s infinite;
+            }
+            .MuiLinearProgress-bar2Buffer {
+              transition: transform .4s linear;
+            }
+            @-webkit-keyframes MuiLinearProgress-keyframes-indeterminate1 {
+              0% {
+                left: -35%;
+                right: 100%;
+              }
+              60% {
+                left: 100%;
+                right: -90%;
+              }
+              100% {
+                left: 100%;
+                right: -90%;
+              }
+            }
+            @-webkit-keyframes MuiLinearProgress-keyframes-indeterminate2 {
+              0% {
+                left: -200%;
+                right: 100%;
+              }
+              60% {
+                left: 107%;
+                right: -8%;
+              }
+              100% {
+                left: 107%;
+                right: -8%;
+              }
+            }
+            @-webkit-keyframes MuiLinearProgress-keyframes-buffer {
+              0% {
+                opacity: 1;
+                background-position: 0 -23px;
+              }
+              50% {
+                opacity: 0;
+                background-position: 0 -23px;
+              }
+              100% {
+                opacity: 1;
+                background-position: -200px -23px;
+              }
+            }
+            </style>
+        
+        
+        <style type="text/css">.alert-box p { font-size: 16px; }</style>
+        
+        <link rel="modulepreload" as="script" crossorigin="" href="https://static.codechef.com/build/react2/assets/LearnCatalog.2b03585b.js">
+        <link rel="stylesheet" href="https://static.codechef.com/build/react2/assets/LearnCatalog.869d6623.css">
+        <link rel="modulepreload" as="script" crossorigin="" href="https://static.codechef.com/build/react2/assets/AddCommentOutlined.5e8311cd.js">
+        
+        </head>
+        
+      -->
+        
+        
+      <!-- <body style="">
+            <noscript>You need to enable JavaScript to run this app.</noscript>
+            <div id="root"><div><div class="MuiBackdrop-root _backdrop_pm713_1" aria-hidden="true" style="opacity: 0; visibility: hidden;"><div class="MuiLinearProgress-root MuiLinearProgress-colorPrimary _progress_pm713_7 MuiLinearProgress-indeterminate" role="progressbar"><div class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate"></div><div class="MuiLinearProgress-bar MuiLinearProgress-bar2Indeterminate MuiLinearProgress-barColorPrimary"></div></div></div><header class="_m-header-one_1bo7b_3"><div class="_l-header_1bo7b_35"><div class="_l-header__logo_1bo7b_77"><div class="_l-header__image-2_1bo7b_90"><a href="https://www.codechef.com"><img class="_m-header__image_1bo7b_100 _m-header__image--pc_1bo7b_103" src="https://cdn.codechef.com/images/cc-logo.svg" alt="CodeChef Logo"><img class="_m-header__image_1bo7b_100 _m-header__image--mobile_1bo7b_111" src="https://cdn.codechef.com/images/cc-logo-mobile.svg" alt="CodeChef Logo"></a></div></div><div class="_headerRightContainer_1bo7b_4227"><div class="_desktopNavigation_1kxco_2906"><div class="_headerNavigation_1kxco_2906"><div class="_navigationRow_1kxco_2910"><a href="/dashboard?itm_medium=navmenu&amp;itm_campaign=dashboard" class="_navigationItem_1kxco_2915"><span class="_navigationLink_1kxco_2931 ">Home</span></a><a href="/learn?itm_medium=navmenu&amp;itm_campaign=learn" class="_navigationItem_1kxco_2915"><span class="_navigationLink_1kxco_2931 ">Learn</span></a><a class="_navigationItem_1kxco_2915" href="/practice?itm_medium=navmenu&amp;itm_campaign=practice"><span class="_navigationLink_1kxco_2931 ">Practice</span></a><a class="_navigationItem_1kxco_2915" href="/contests?itm_medium=navmenu&amp;itm_campaign=allcontests"><span class="_navigationLink_1kxco_2931 ">Compete</span></a></div></div></div><div class="_l-header__user-block_1bo7b_2133"><div class="_l-header__user-block_1bo7b_2133"><div style="display: flex; align-items: center;"><a class="_m-premium-text-container_1bo7b_212" href="/pro?ref=header"><i class="_i-premium-icon_1bo7b_287"></i><span class="_m-premium-text_1bo7b_212">Upgrade to Pro</span></a><hr class="_m-divider--vertical_1bo7b_258"><div class="_m-login-container--desktop_1bo7b_1984"><button type="button" class="_m-login-button-no-border_1bo7b_1993">Login</button><button type="button" class="_m-signup-button_1bo7b_2017">Sign Up</button></div><div class="_m-login-container--mobile_1bo7b_1975"><button type="button" class="_m-login-button_1bo7b_1993">Login / Sign up</button></div></div></div></div></div></div></header><div class="_mobileNavigation_1kxco_2906"><div class="_headerNavigation_1kxco_2906"><div class="_navigationRow_1kxco_2910"><a href="/dashboard?itm_medium=navmenu&amp;itm_campaign=dashboard" class="_navigationItem_1kxco_2915"><span class="_navigationLink_1kxco_2931 ">Home</span></a><a href="/learn?itm_medium=navmenu&amp;itm_campaign=learn" class="_navigationItem_1kxco_2915"><span class="_navigationLink_1kxco_2931 ">Learn</span></a><a class="_navigationItem_1kxco_2915" href="/practice?itm_medium=navmenu&amp;itm_campaign=practice"><span class="_navigationLink_1kxco_2931 ">Practice</span></a><a class="_navigationItem_1kxco_2915" href="/contests?itm_medium=navmenu&amp;itm_campaign=allcontests"><span class="_navigationLink_1kxco_2931 ">Compete</span></a></div></div></div><div class="_pageContainer_1se0b_3" style="max-width: 100%;"><div style="display: block;"><div class="_topBannersection_18pcu_2"><div class="_bannerSection_18pcu_6"><div class="_bannerHead_18pcu_21"><h1 class="_mHead_18pcu_25">Learn</h1></div><div class="_bannerContent_18pcu_30"><p class="_mPara_18pcu_30">Learn the fundamentals of computer science with our engaging and practical courses in C, C++, Python, Java, and SQL. Our interactive courses emphasize real-world problem-solving, allowing you to practice your skills and gain confidence. Start learning with CodeChef today and unlock your potential as a developer!</p></div></div></div><div class="_fullPageContainer_18pcu_41"><div class="_leftContainer_18pcu_56"><div class="_tabs_18pcu_63"><span class="_tabsHeading_18pcu_84">By Topic</span><button class="_tabsComp_18pcu_90
+                                                          _tabsCompSelected_18pcu_111
+                                                          " type="button">Learn to Code</button><button class="_tabsComp_18pcu_90
+                                                          
+                                                          " type="button">Beginner DSA</button><button class="_tabsComp_18pcu_90
+                                                          
+                                                          " type="button">Intermediate DSA</button><button class="_tabsComp_18pcu_90
+                                                          
+                                                          " type="button">Data analytics</button><button class="_tabsComp_18pcu_90
+                                                          
+                                                          " type="button">Web development</button><button class="_tabsComp_18pcu_90
+                                                          
+                                                          " type="button">Upcoming courses</button></div>
+                                                          <div class="_tabs_18pcu_63"><span class="_tabsHeading_18pcu_84">By Language</span>
+                                                            <button class="_tabsComp_18pcu_90 " type="button">C</button>
+                                                            <button class="_tabsComp_18pcu_90 " type="button">C++</button>
+                                                            
+                                                            <button class="_tabsComp_18pcu_90 " type="button">Java</button>
+                                                            <button class="_tabsComp_18pcu_90 " type="button">Python</button>
+                                                            <button class="_tabsComp_18pcu_90 " type="button">SQL</button>
+                                                            <button class="_tabsComp_18pcu_90 " type="button">C sharp</button>
+                                                            <button class="_tabsComp_18pcu_90 " type="button">HTML / CSS / JS</button>
+                                                            <button class="_tabsComp_18pcu_90 " type="button">Rust</button>
+                                                            <button class="_tabsComp_18pcu_90 " type="button">Go</button>
+                                                            <button class="_tabsComp_18pcu_90 " type="button">Kotlin</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_mobileDropdown_18pcu_134"><select class="_selectBox_18pcu_148"><option value="-1">All Courses</option>
+                                                        <option value="1" data-slug="learn-to-code">Learn to Code</option>
+                                                        <option value="2" data-slug="beginner-dsa">Beginner DSA</option>
+                                                        <option value="3" data-slug="intermediate-dsa">Intermediate DSA</option>
+                                                        <option value="4" data-slug="data-analytics">Data analytics</option>
+                                                        <option value="11" data-slug="web-development">Web development</option>
+                                                        <option value="13" data-slug="upcoming-courses">Upcoming courses</option>
+                                                        <option value="5" data-slug="c">C</option><option value="6" data-slug="c-plus-plus">C++</option>
+                                                        <option value="7" data-slug="java">Java</option><option value="8" data-slug="python">Python</option>
+                                                        <option value="9" data-slug="sql">SQL</option><option value="10" data-slug="c-sharp">C sharp</option>
+                                                        <option value="12" data-slug="html-css-js">HTML / CSS / JS</option><option value="14" data-slug="rust">Rust</option>
+                                                        <option value="15" data-slug="go">Go</option><option value="16" data-slug="kotlin">Kotlin</option>
+                                                    </select> 
+                                                </div>
+                                                <div class="_rightContainer_18pcu_167">
+                                                    <h1 class="_courseHeading_18pcu_177" id="learn-to-code">Learn to Code</h1>
+                                                    <div class="_mainContainer_18pcu_184">
+                                                        <div class="_cards__container_18pcu_199">
+                                                            <div class="_card_18pcu_199"><div class="_learning__card_18pcu_212">
+                                                                <div class="_imageContainer_18pcu_227">
+                                                                    <img src="https://cdn.codechef.com/images/self-learning/icons/python.svg" alt="python" class="_course__icon_18pcu_231">
+                                                                </div>
+                                                                <div class="_chip_18pcu_237">Beginner</div>
+                                                                <p class="_course__title_18pcu_248">Learn Python</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="_card_18pcu_199">
+                                                            <div class="_learning__card_18pcu_212">
+                                                                <div class="_imageContainer_18pcu_227">
+                                                                    <img src="https://cdn.codechef.com/images/self-learning/icons/c.svg" alt="c" class="_course__icon_18pcu_231">
+                                                                </div>
+                                                                <div class="_chip_18pcu_237">Beginner</div>
+                                                                <p class="_course__title_18pcu_248">Learn C</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="_card_18pcu_199">
+                                                            <div class="_learning__card_18pcu_212">
+                                                                <div class="_imageContainer_18pcu_227">
+                                                                    <img src="https://cdn.codechef.com/images/self-learning/icons/cpp.svg" alt="cpp" class="_course__icon_18pcu_231">
+                                                                </div>
+                                                                <div class="_chip_18pcu_237">Beginner</div>
+                                                                <p class="_course__title_18pcu_248">Learn C++</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="_card_18pcu_199"><div class="_learning__card_18pcu_212">
+                                                            <div class="_imageContainer_18pcu_227">
+                                                                <img src="https://cdn.codechef.com/images/self-learning/icons/java.svg" alt="java" class="_course__icon_18pcu_231">
+                                                            </div>
+                                                            <div class="_chip_18pcu_237">Beginner</div>
+                                                            <p class="_course__title_18pcu_248">Learn Java</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_card_18pcu_199">
+                                                        <div class="_learning__card_18pcu_212">
+                                                            <div class="_imageContainer_18pcu_227">
+                                                                <img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp.svg" alt="c-sharp" class="_course__icon_18pcu_231">
+                                                            </div>
+                                                            <div class="_chip_18pcu_237">Beginner</div>
+                                                            <p class="_course__title_18pcu_248">Learn C#</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_card_18pcu_199">
+                                                        <div class="_learning__card_18pcu_212">
+                                                            <div class="_imageContainer_18pcu_227">
+                                                                <img src="https://cdn.codechef.com/images/self-learning/icons/advance-java.svg" alt="advance-java" class="_course__icon_18pcu_231">
+                                                            </div>
+                                                            <div class="_chip_18pcu_237">Intermediate</div>
+                                                            <p class="_course__title_18pcu_248">Learn Advance Java</p>
+                                                          </div></div>
+                                                          <div class="_card_18pcu_199">
+                                                            <div class="_learning__card_18pcu_212">
+                                                              <div class="_imageContainer_18pcu_227">
+                                                                <img src="https://cdn.codechef.com/images/self-learning/icons/rust.svg" alt="rust" class="_course__icon_18pcu_231"></div>
+                                                                <div class="_chip_18pcu_237">Beginner</div>
+                                                                <p class="_course__title_18pcu_248">Learn Rust</p>
+                                                              </div>
+                                                            </div>
+                                                            <div class="_card_18pcu_199">
+                                                              <div class="_learning__card_18pcu_212">
+                                                                <div class="_imageContainer_18pcu_227">
+                                                                  <img src="https://cdn.codechef.com/images/self-learning/icons/go.svg" alt="go" class="_course__icon_18pcu_231"></div>
+                                                                  <div class="_chip_18pcu_237">Beginner</div>
+                                                                  <p class="_course__title_18pcu_248">Learn Go</p>
+                                                                </div>
+                                                              </div>
+                                                              <div class="_card_18pcu_199">
+                                                                <div class="_learning__card_18pcu_212">
+                                                                  <div class="_imageContainer_18pcu_227">
+                                                                    <img src="https://cdn.codechef.com/images/self-learning/icons/kotlin.svg" alt="kotlin" class="_course__icon_18pcu_231"></div>
+                                                                    <div class="_chip_18pcu_237">Beginner</div>
+                                                                    <p class="_course__title_18pcu_248">Learn Kotlin</p></div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                              <h1 class="_courseHeading_18pcu_177" id="beginner-dsa">Beginner DSA</h1>
+                                                              <div class="_mainContainer_18pcu_184">
+                                                                <div class="_cards__container_18pcu_199">
+                                                                  <div class="_card_18pcu_199">
+                                                                    <div class="_learning__card_18pcu_212">
+                                                                      <div class="_imageContainer_18pcu_227">
+                                                                        <img src="https://cdn.codechef.com/images/self-learning/icons/python-beginner-v2-p1.svg" alt="python-beginner-v2-p1" class="_course__icon_18pcu_231"></div>
+                                                                        <div class="_chip_18pcu_237">Intermediate</div>
+                                                                        <p class="_course__title_18pcu_248">Logic Building in Python</p>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="_card_18pcu_199">
+                                                                      <div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227">
+                                                                        <img src="https://cdn.codechef.com/images/self-learning/icons/c-beginner-v2-p1.svg" alt="c-beginner-v2-p1" class="_course__icon_18pcu_231">
+                                                                      </div>
+                                                                      <div class="_chip_18pcu_237">Intermediate</div>
+                                                                      <p class="_course__title_18pcu_248">Logic Building in C</p>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class="_card_18pcu_199">
+                                                                    <div class="_learning__card_18pcu_212">
+                                                                      <div class="_imageContainer_18pcu_227">
+                                                                        <img src="https://cdn.codechef.com/images/self-learning/icons/cpp-beginner-v2-p1.svg" alt="cpp-beginner-v2-p1" class="_course__icon_18pcu_231"></div>
+                                                                        <div class="_chip_18pcu_237">Intermediate</div>
+                                                                        <p class="_course__title_18pcu_248">Logic Building in C++</p>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="_card_18pcu_199">
+                                                                      <div class="_learning__card_18pcu_212">
+                                                                        <div class="_imageContainer_18pcu_227">
+                                                                          <img src="https://cdn.codechef.com/images/self-learning/icons/java-beginner-v2-p1.svg" alt="java-beginner-v2-p1" class="_course__icon_18pcu_231"></div>
+                                                                          <div class="_chip_18pcu_237">Intermediate</div>
+                                                                          <p class="_course__title_18pcu_248">Logic Building in Java</p>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="_card_18pcu_199">
+                                                                        <div class="_learning__card_18pcu_212">
+                                                                          <div class="_imageContainer_18pcu_227">
+                                                                            <img src="https://cdn.codechef.com/images/self-learning/icons/python-beginner-v2-p2.svg" alt="python-beginner-v2-p2" class="_course__icon_18pcu_231"></div>
+                                                                            <div class="_chip_18pcu_237">Intermediate</div>
+                                                                            <p class="_course__title_18pcu_248">Beginner DSA in Python</p>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="_card_18pcu_199">
+                                                                          <div class="_learning__card_18pcu_212">
+                                                                            <div class="_imageContainer_18pcu_227">
+                                                                              <img src="https://cdn.codechef.com/images/self-learning/icons/c-beginner-v2-p2.svg" alt="c-beginner-v2-p2" class="_course__icon_18pcu_231">
+                                                                            </div>
+                                                                            <div class="_chip_18pcu_237">Intermediate</div>
+                                                                            <p class="_course__title_18pcu_248">Beginner DSA in C</p>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="_card_18pcu_199">
+                                                                          <div class="_learning__card_18pcu_212">
+                                                                            <div class="_imageContainer_18pcu_227">
+                                                                              <img src="https://cdn.codechef.com/images/self-learning/icons/cpp-beginner-v2-p2.svg" alt="cpp-beginner-v2-p2" class="_course__icon_18pcu_231">
+                                                                            </div>
+                                                                            <div class="_chip_18pcu_237">Intermediate</div>
+                                                                            <p class="_course__title_18pcu_248">Beginner DSA in C++</p>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="_card_18pcu_199">
+                                                                          <div class="_learning__card_18pcu_212">
+                                                                            <div class="_imageContainer_18pcu_227">
+                                                                              <img src="https://cdn.codechef.com/images/self-learning/icons/java-beginner-v2-p2.svg" alt="java-beginner-v2-p2" class="_course__icon_18pcu_231">
+                                                                            </div>
+                                                                            <div class="_chip_18pcu_237">Intermediate</div>
+                                                                            <p class="_course__title_18pcu_248">Beginner DSA in Java</p>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="_card_18pcu_199"><div class-v2-p2.svg" alt="java-beginner-v2-p2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in Java</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/advance-java.svg" alt="advance-java" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Learn Advance Java</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="python">Python</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/python.svg" alt="python" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn Python</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/python-beginner-v2-p1.svg" alt="python-beginner-v2-p1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in Python</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/python-beginner-v2-p2.svg" alt="python-beginner-v2-p2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in Python</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="sql">SQL</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/sql.svg" alt="sql" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn SQL</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/sql-intermediate.svg" alt="sql-intermediate" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">SQL Intermediate</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/sql-at-work.svg" alt="sql-at-work" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">SQL at Work</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="c-sharp">C sharp</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp.svg" alt="c-sharp" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn C#</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp-beginner-part-1.svg" alt="c-sharp-beginner-part-1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in C#</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp-beginner-part-2.svg" alt="c-sharp-beginner-part-2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in C#</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="html-css-js">HTML / CSS / JS</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/html.svg" alt="html" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn HTML / CSS</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/web-dev-js.svg" alt="web-dev-js" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Web development using JavaScript</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/css-intermediate.svg" alt="css-intermediate" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">CSS Intermediate</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="rust">Rust</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/rust.svg" alt="rust" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn Rust</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="go">Go</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/go.svg" alt="go" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn Go</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="kotlin">Kotlin</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/kotlin.svg" alt="kotlin" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn Kotlin</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/kotlin-beginner-part-1.svg" alt="kotlin-beginner-part-1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in Kotlin</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/kotlin-beginner-part-2.svg" alt="kotlin-beginner-part-2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in Kotlin</p></div></div></div></div><div class="_feedbackContainer_18pcu_265"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4zm-2 13.17L18.83 16H4V4h16v13.17zM13 5h-2v4H7v2h4v4h2v-4h4V9h-4z"></path></svg><p class="_paraText_18pcu_279">We'd love to support you on your learning journey. If you have any suggestions on how we can better serve you, please take a moment to fill our <a class="_mLink_18pcu_285" href="https://www.codechef.com/feedback">feedback form</a>.</p></div></div></div></div></div><footer class="_l-footer_1s2yr_2"><div class="_l-footer__content_1s2yr_28 _m-footer__content_1s2yr_35"><div class="_l-footer__links_1s2yr_40"><div class="_l-footer__column_1s2yr_167"><div class="_l-footer__head_1s2yr_80"><p class="_m-footer__head_1s2yr_73">Programming Tools</p></div><div class="_l-footer__list_1s2yr_49"><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/ide">Online IDE</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/contests#future-contests">Upcoming Coding Contests</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/hostyourcontest">Host Your Contest</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/problemsetting">Problem Setting</a></div></div></div><div class="_l-footer__column_1s2yr_167"><div class="_l-footer__head_1s2yr_80"><p class="_m-footer__head_1s2yr_73">Learning Resources</p></div><div class="_l-footer__list_1s2yr_49"><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/learn">Learning paths</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/practice">Practice Problems</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="https://discuss.codechef.com">CodeChef Discuss</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/wiki/faq">FAQ's</a></div></div></div><div class="_l-footer__column_1s2yr_167"><div class="_l-footer__head_1s2yr_80"><p class="_m-footer__head_1s2yr_73">More</p></div><div class="_l-footer__list_1s2yr_49"><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="https://business.codechef.com">CodeChef For Business</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/contactus">Contact Us</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/codeofconduct">Code Of Conduct</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/rankings">User Ranklist</a></div></div></div><div class="_l-footer__column_1s2yr_167"><div class="_l-footer__head_1s2yr_80"><p class="_m-footer__head_1s2yr_73">Usage Policy</p></div><div class="_l-footer__list_1s2yr_49"><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/privacy-policy">Privacy policy</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/terms">Terms</a></div><div class="_l-footer__link_1s2yr_40"><a class="_m-footer__link_1s2yr_62" href="/other-policies">Other Policy</a></div></div></div></div></div><div class="_l-footer__social_1s2yr_96"><div class="_m-footer__social_1s2yr_125"><div class="_l-footer__site_1s2yr_120"><a class="_m-footer__site_1s2yr_111 undefined" href="https://www.codechef.com">www.codechef.com</a></div><div class="_l-footer__follow-sec_1s2yr_104"><div class="_l-footer__follow_1s2yr_104"><span class="_m-footer__follow_1s2yr_139">Follow Us</span></div><div class="_l-footer__icons_1s2yr_151"><a class="_m-social_1s2yr_222 _i-youtube_1s2yr_255" href="//youtube.com/c/codechef1"></a><a class="_m-social_1s2yr_222 _i-telegram_1s2yr_252" href="//t.me/learncpwithcodechef"></a><a class="_m-social_1s2yr_222 _i-facebook_1s2yr_249" href="//facebook.com/CodeChef"></a><a class="_m-social_1s2yr_222 _i-instagram_1s2yr_243" href="//instagram.com/codechef"></a><a class="_m-social_1s2yr_222 _i-twitter_1s2yr_246" href="//twitter.com/codechef"></a><a class="_m-social_1s2yr_222 _i-medium_1s2yr_240" href="//medium.com/codechef-official"></a><a class="_m-social_1s2yr_222 _i-quora_1s2yr_237" href="//quora.com/topic/CodeChef"></a><a class="_m-social_1s2yr_222 _i-linkedin_1s2yr_234" href="//linkedin.com/company/codechef"></a></div></div></div></div></footer><div id="gdpr-cookie-notif" class="_global--announcement_xcnwk_1" style="display: none;"><div class="_global--announcement__content_xcnwk_19"><p>We use cookies to improve your experience and for analytical purposes. Read our <a class="" href="https://www.codechef.com/privacy-policy">Privacy Policy</a> and <a class="" href="https://www.codechef.com/terms">Terms</a> to know more. You consent to our cookies if you continue to use our website.</p></div><div class="_global--announcement__action_xcnwk_33"><button type="button" id="gdpr-i-love-cookies">Okay</button></div></div></div></div>
+                                                                                                        
+              <script>
+              if (window.location.pathname.split('/')[1] === 'pro') {
+                // const razorPay = document.createElement('script');
+                // razorPay.setAttribute('src', 'https://checkout.razorpay.com/v1/checkout.js');
+                // document.head.appendChild(razorPay);
+          
+                const instamojo = document.createElement('script');
+                instamojo.setAttribute('src', 'https://js.instamojo.com/v1/checkout.js');
+                document.head.appendChild(instamojo);
+          
+              }
+              if (window.location.pathname.split('/')[1] !== 'games') {
+                const scriptElement = document.createElement('script');
+                scriptElement.setAttribute('src',
+                  "/sites/all/modules/codechef_alerts/codechef_alerts.js?v=649c43b6894169b33b5557aa0374459d"
+                );
+                document.body.appendChild(scriptElement);
+              }
+            </script><script src="/sites/all/modules/codechef_alerts/codechef_alerts.js?v=649c43b6894169b33b5557aa0374459d"></script>
+            <script type="text/javascript" src="/sites/all/themes/mallow/src/js/cookies.js?v=c0c952b5f5af42bd78098f00c77cfa63"></script>
+            
+          -->
+          
+          
+          <div style="top: 0px; left: 0px; position: fixed; display: none; place-items: center; height: 100vh; width: 100vw; z-index: 10000; line-height: 1.5; font-size: 16px; backdrop-filter: blur(2px); background: rgba(0, 0, 0, 0.1); box-sizing: border-box;"></div><script type="text/javascript" id="">(function(a,e,b,f,g,c,d){a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};c=e.createElement(f);c.async=1;c.src="https://www.clarity.ms/tag/"+g;d=e.getElementsByTagName(f)[0];d.parentNode.insertBefore(c,d)})(window,document,"clarity","script","3wyy3fxv0y");</script></body>
+        
+        
+          
+        
+        
+        </body>
+        
+        </html> 
+       <!-- <h1 class="_courseHeading_18pcu_177" id="learn-to-code">Learn to Code</h1>
+        <div class="_mainContainer_18pcu_184">
+            <div class="_cards__container_18pcu_199">
+                <div class="_card_18pcu_199"><div class="_learning__card_18pcu_212">
+                    <div class="_imageContainer_18pcu_227">
+                        <img src="https://cdn.codechef.com/images/self-learning/icons/python.svg" alt="python" class="_course__icon_18pcu_231">
+                    </div>
+                    <div class="_chip_18pcu_237">Beginner</div>
+                    <p class="_course__title_18pcu_248">Learn Python</p>
+                </div>
+            </div>
+            <div class="_card_18pcu_199">
+                <div class="_learning__card_18pcu_212">
+                    <div class="_imageContainer_18pcu_227">
+                        <img src="https://cdn.codechef.com/images/self-learning/icons/c.svg" alt="c" class="_course__icon_18pcu_231">
+                    </div>
+                    <div class="_chip_18pcu_237">Beginner</div>
+                    <p class="_course__title_18pcu_248">Learn C</p>
+                </div>
+            </div>
+            <div class="_card_18pcu_199">
+                <div class="_learning__card_18pcu_212">
+                    <div class="_imageContainer_18pcu_227">
+                        <img src="https://cdn.codechef.com/images/self-learning/icons/cpp.svg" alt="cpp" class="_course__icon_18pcu_231">
+                    </div>
+                    <div class="_chip_18pcu_237">Beginner</div>
+                    <p class="_course__title_18pcu_248">Learn C++</p></div>
+                </div>
+                <div class="_card_18pcu_199">
+                    <div class="_learning__card_18pcu_212">
+                        <div class="_imageContainer_18pcu_227">
+                            <img src="https://cdn.codechef.com/images/self-learning/icons/java.svg" alt="java" class="_course__icon_18pcu_231">
+                        </div>
+                        <div class="_chip_18pcu_237">Beginner</div>
+                        <p class="_course__title_18pcu_248">Learn Java</p>
+                    </div>
+                </div>
+                <div class="_card_18pcu_199">
+                    <div class="_learning__card_18pcu_212">
+                        <div class="_imageContainer_18pcu_227">
+                            <img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp.svg" alt="c-sharp" class="_course__icon_18pcu_231">
+                        </div>
+                        <div class="_chip_18pcu_237">Beginner</div>
+                        <p class="_course__title_18pcu_248">Learn C#</p>
+                    </div>
+                </div>
+                <div class="_card_18pcu_199">
+                    <div class="_learning__card_18pcu_212">
+                        <div class="_imageContainer_18pcu_227">
+                            <img src="https://cdn.codechef.com/images/self-learning/icons/advance-java.svg" alt="advance-java" class="_course__icon_18pcu_231">
+                        </div>
+                        <div class="_chip_18pcu_237">Intermediate</div>
+                        <p class="_course__title_18pcu_248">Learn Advance Java</p>
+                    </div>
+                </div>
+                <div class="_card_18pcu_199"><div class="_learning__card_18pcu_212">
+                    <div class="_imageContainer_18pcu_227">
+                    <img src="https://cdn.codechef.com/images/self-learning/icons/rust.svg" alt="rust" class="_course__icon_18pcu_231"></div>
+                    <div class="_chip_18pcu_237">Beginner</div>
+                    <p class="_course__title_18pcu_248">Learn Rust</p>
+                </div>
+            </div>
+            <div class="_card_18pcu_199">
+                <div class="_learning__card_18pcu_212">
+                    <div class="_imageContainer_18pcu_227">
+                        <img src="https://cdn.codechef.com/images/self-learning/icons/go.svg" alt="go" class="_course__icon_18pcu_231"></div>
+                        <div class="_chip_18pcu_237">Beginner</div>
+                        <p class="_course__title_18pcu_248">Learn Go</p>
+                    </div>
+                </div>
+                <div class="_card_18pcu_199">
+                    <div class="_learning__card_18pcu_212">
+                        <div class="_imageContainer_18pcu_227">
+                            <img src="https://cdn.codechef.com/images/self-learning/icons/kotlin.svg" alt="kotlin" class="_course__icon_18pcu_231"></div>
+                            <div class="_chip_18pcu_237">Beginner</div>
+                            <p class="_course__title_18pcu_248">Learn Kotlin</p>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <h1 class="_courseHeading_18pcu_177" id="beginner-dsa">PORTAL</h1>
+            <div class="_mainContainer_18pcu_184">
+                <div class="_cards__container_18pcu_199">
+                    <div class="_card_18pcu_199">
+                        <div class="_learning__card_18pcu_212">
+                            <div class="_imageContainer_18pcu_227">
+                                <img src="https://cdn.codechef.com/images/self-learning/icons/python-beginner-v2-p1.svg" alt="python-beginner-v2-p1" class="_course__icon_18pcu_231">
+                            </div>
+                            <div class="_chip_18pcu_237">Intermediate</div>
+                            <p class="_course__title_18pcu_248">Logic Building in Python</p>
+                        </div>
+                    </div>
+                    
+                    <div class="_card_18pcu_199">
+                        <div class="_learning__card_18pcu_212">
+                            <div class="_imageContainer_18pcu_227">
+                                <img src="https://cdn.codechef.com/images/self-learning/icons/c-beginner-v2-p1.svg" alt="c-beginner-v2-p1" class="_course__icon_18pcu_231"></div>
+                                <div class="_chip_18pcu_237">Intermediate</div>
+                                
+                                <p class="_course__title_18pcu_248">Logic Building in C</p>
+                            </div>
+                        </div>
+                        <div class="_card_18pcu_199">
+                            <div class="_learning__card_18pcu_212">
+                                <div class="_imageContainer_18pcu_227">
+                                    <img src="https://cdn.codechef.com/images/self-learning/icons/cpp-beginner-v2-p1.svg" alt="cpp-beginner-v2-p1" class="_course__icon_18pcu_231">
+                                </div>
+                                
+                                <div class="_chip_18pcu_237">Intermediate</div>
+                                <p class="_course__title_18pcu_248">Logic Building in C++</p>
+                            </div>
+                        </div>
+                        <div class="_card_18pcu_199">
+                            <div class="_learning__card_18pcu_212">
+                                <div class="_imageContainer_18pcu_227">
+                                    <img src="https://cdn.codechef.com/images/self-learning/icons/java-beginner-v2-p1.svg" alt="java-beginner-v2-p1" class="_course__icon_18pcu_231"></div>
+                                    <div class="_chip_18pcu_237">Intermediate</div>
+                                    <p class="_course__title_18pcu_248">Logic Building in Java</p>
+                                </div>
+                            </div>
+                            <div class="_card_18pcu_199">
+                                <div class="_learning__card_18pcu_212">
+                                    <div class="_imageContainer_18pcu_227">
+                                        <img src="https://cdn.codechef.com/images/self-learning/icons/python-beginner-v2-p2.svg" alt="python-beginner-v2-p2" class="_course__icon_18pcu_231"></div>
+                                        <div class="_chip_18pcu_237">Intermediate</div>
+                                        <p class="_course__title_18pcu_248">Beginner DSA in Python</p>
+                                      </div>
+                                    </div>
+                                    <div class="_card_18pcu_199">
+                                      <div class="_learning__card_18pcu_212">
+                                        <div class="_imageContainer_18pcu_227">
+                                          <img src="https://cdn.codechef.com/images/self-learning/icons/c-beginner-v2-p2.svg" alt="c-beginner-v2-p2" class="_course__icon_18pcu_231">
+                                        </div>
+                                        <div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in C</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/cpp-beginner-v2-p2.svg" alt="cpp-beginner-v2-p2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in C++</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/java-beginner-v2-p2.svg" alt="java-beginner-v2-p2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in Java</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp-beginner-part-2.svg" alt="c-sharp-beginner-part-2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in C#</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp-beginner-part-1.svg" alt="c-sharp-beginner-part-1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in C#</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/kotlin-beginner-part-1.svg" alt="kotlin-beginner-part-1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in Kotlin</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/kotlin-beginner-part-2.svg" alt="kotlin-beginner-part-2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in Kotlin</p></div></div></div></div>
+                                        <!--<h1 class="_courseHeading_18pcu_177" id="intermediate-dsa">Intermediate DSA</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/interviewprep.svg" alt="interviewprep" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Archived</div><p class="_course__title_18pcu_248">Classical Problems</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/1to2stars.svg" alt="1to2stars" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Advanced</div><p class="_course__title_18pcu_248">Level up from 1* to 2*</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/2to3stars.svg" alt="2to3stars" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Advanced</div><p class="_course__title_18pcu_248">Jump from 2* to 3*</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/3to4stars.svg" alt="3to4stars" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Advanced</div><p class="_course__title_18pcu_248">Rise from 3* to 4*</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="data-analytics">Data analytics</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/sql.svg" alt="sql" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn SQL</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/sql-intermediate.svg" alt="sql-intermediate" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">SQL Intermediate</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/sql-at-work.svg" alt="sql-at-work" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">SQL at Work</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="web-development">Web development</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/html.svg" alt="html" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn HTML / CSS</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/ux.svg" alt="ux" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">UX for Web developers</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/web-dev-js.svg" alt="web-dev-js" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Web development using JavaScript</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/css-intermediate.svg" alt="css-intermediate" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">CSS Intermediate</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="upcoming-courses">Upcoming courses</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/javascript.svg" alt="javascript" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn JavaScript</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="c">C</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c.svg" alt="c" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn C</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-beginner-v2-p1.svg" alt="c-beginner-v2-p1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in C</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-beginner-v2-p2.svg" alt="c-beginner-v2-p2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in C</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="c-plus-plus">C++</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/cpp.svg" alt="cpp" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn C++</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/cpp-beginner-v2-p1.svg" alt="cpp-beginner-v2-p1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in C++</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/cpp-beginner-v2-p2.svg" alt="cpp-beginner-v2-p2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in C++</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="java">Java</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/java.svg" alt="java" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn Java</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/java-beginner-v2-p1.svg" alt="java-beginner-v2-p1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in Java</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/java-beginner-v2-p2.svg" alt="java-beginner-v2-p2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in Java</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/advance-java.svg" alt="advance-java" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Learn Advance Java</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="python">Python</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/python.svg" alt="python" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn Python</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/python-beginner-v2-p1.svg" alt="python-beginner-v2-p1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in Python</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/python-beginner-v2-p2.svg" alt="python-beginner-v2-p2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in Python</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="sql">SQL</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/sql.svg" alt="sql" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn SQL</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/sql-intermediate.svg" alt="sql-intermediate" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">SQL Intermediate</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/sql-at-work.svg" alt="sql-at-work" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">SQL at Work</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="c-sharp">C sharp</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp.svg" alt="c-sharp" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn C#</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp-beginner-part-1.svg" alt="c-sharp-beginner-part-1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in C#</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/c-sharp-beginner-part-2.svg" alt="c-sharp-beginner-part-2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in C#</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="html-css-js">HTML / CSS / JS</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/html.svg" alt="html" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn HTML / CSS</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/web-dev-js.svg" alt="web-dev-js" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Web development using JavaScript</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/css-intermediate.svg" alt="css-intermediate" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">CSS Intermediate</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="rust">Rust</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/rust.svg" alt="rust" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn Rust</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="go">Go</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/go.svg" alt="go" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn Go</p></div></div></div></div><h1 class="_courseHeading_18pcu_177" id="kotlin">Kotlin</h1><div class="_mainContainer_18pcu_184"><div class="_cards__container_18pcu_199"><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/kotlin.svg" alt="kotlin" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Beginner</div><p class="_course__title_18pcu_248">Learn Kotlin</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/kotlin-beginner-part-1.svg" alt="kotlin-beginner-part-1" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Logic Building in Kotlin</p></div></div><div class="_card_18pcu_199"><div class="_learning__card_18pcu_212"><div class="_imageContainer_18pcu_227"><img src="https://cdn.codechef.com/images/self-learning/icons/kotlin-beginner-part-2.svg" alt="kotlin-beginner-part-2" class="_course__icon_18pcu_231"></div><div class="_chip_18pcu_237">Intermediate</div><p class="_course__title_18pcu_248">Beginner DSA in Kotlin</p></div></div></div></div><div class="_feedbackContainer_18pcu_265"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4zm-2 13.17L18.83 16H4V4h16v13.17zM13 5h-2v4H7v2h4v4h2v-4h4V9h-4z"></path></svg><p class="_paraText_18pcu_279">We'd love to support you on your learning journey. If you have any suggestions on how we can better serve you, please take a moment to fill our <a class="_mLink_18pcu_285" href="https://www.codechef.com/feedback">feedback form</a>.</p></div></div>
+                                        -->
+
+</body>
+</html>

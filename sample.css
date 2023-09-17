@@ -1,0 +1,333 @@
+._topBannersection_18pcu_2 {
+    background: linear-gradient(270deg, #010529 0%, #153465 100%)
+}
+
+._bannerSection_18pcu_6 {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 7px;
+    padding: 24px 32px;
+}
+
+@media (max-width: 499px) {
+    ._bannerSection_18pcu_6 {
+        padding: 20px;
+    }
+}
+
+._bannerSection_18pcu_6 ._bannerHead_18pcu_21 {
+    display: flex;
+    align-items: flex-start;
+}
+
+._bannerSection_18pcu_6 ._bannerHead_18pcu_21 ._mHead_18pcu_25 {
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+}
+
+._bannerSection_18pcu_6 ._bannerContent_18pcu_30 ._mPara_18pcu_30 {
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: 0;
+    color: #fff;
+    max-width: 1024px;
+    opacity: 1;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+._fullPageContainer_18pcu_41 {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: start;
+    min-height: 800px;
+}
+
+@media (max-width: 700px) {
+    ._fullPageContainer_18pcu_41 {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 {
+    max-width: 336px;
+    padding-left: 32px;
+    padding-top: 32px;
+    position: sticky;
+    top: 0;
+}
+
+._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 ._tabs_18pcu_63 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 ._tabs_18pcu_63 ._tabSelected_18pcu_68 {
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid white;
+    padding: 8px;
+    font-family: Open Sans, serif;
+    background: white;
+    font-weight: 500;
+    display: flex;
+    line-height: 140%;
+}
+
+._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 ._tabs_18pcu_63 ._tabSelected_18pcu_68:hover {
+    color: #757575;
+    border: 1px solid #f2f2f2;
+    background: #f2f2f2;
+}
+
+._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 ._tabs_18pcu_63 ._tabsHeading_18pcu_84 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    margin-bottom: 16px;
+}
+
+._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 ._tabs_18pcu_63 ._tabsComp_18pcu_90 {
+    margin-bottom: 12px;
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+    align-items: flex-start;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid white;
+    color: #757575;
+    background: none;
+    gap: 10px;
+    width: 250px;
+    border-radius: 2px;
+    transition: .3s;
+}
+
+._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 ._tabs_18pcu_63 ._tabsComp_18pcu_90:hover {
+    border: 1px solid #f2f2f2;
+    background: #f2f2f2;
+    color: #757575;
+}
+
+._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 ._tabs_18pcu_63 ._tabsCompSelected_18pcu_111 {
+    cursor: pointer;
+    background: rgba(49, 133, 252, .1019607843);
+    color: #3185fc;
+    padding: 8px;
+    border: 1px solid rgba(49, 133, 252, .1019607843);
+    border-radius: 4px;
+    display: flex;
+}
+
+._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 ._tabs_18pcu_63 ._tabsCompSelected_18pcu_111:hover {
+    cursor: auto;
+    background: rgba(49, 133, 252, .1019607843);
+    color: #3185fc;
+    padding: 8px;
+    border: 1px solid rgba(49, 133, 252, .1019607843);
+    border-radius: 4px;
+    display: flex;
+}
+
+@media (max-width: 799px) {
+    ._fullPageContainer_18pcu_41 ._leftContainer_18pcu_56 {
+        display: none;
+    }
+}
+
+._fullPageContainer_18pcu_41 ._mobileDropdown_18pcu_134 {
+    display: none;
+    width: 100%;
+    margin: 0 20px;
+    padding-right: 44px;
+    background: #FFFFFF;
+}
+
+@media (max-width: 699px) {
+    ._fullPageContainer_18pcu_41 ._mobileDropdown_18pcu_134 {
+        display: block;
+        position: sticky;
+        top: 0;
+    }
+}
+
+._fullPageContainer_18pcu_41 ._mobileDropdown_18pcu_134 select._selectBox_18pcu_148 {
+   /* webkit-appearance: none; */
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) .5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.8em;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    padding: 12px;
+    border: 1px solid #AFB6C5;
+    border-radius: 4px;
+    width: 100%;
+    margin: 12px auto;
+    font-size: 15px;
+    color: #363636;
+}
+
+._fullPageContainer_18pcu_41 ._mobileDropdown_18pcu_134 select._selectBox_18pcu_148:focus {
+    border-color: #3185fc;
+    outline: 0;
+}
+
+._fullPageContainer_18pcu_41 ._rightContainer_18pcu_167 {
+    max-width: 1068px;
+    width: 100%;
+    padding: 32px 49px 48px 24px;
+}
+
+@media (max-width: 499px) {
+    ._fullPageContainer_18pcu_41 ._rightContainer_18pcu_167 {
+        padding: 20px;
+    }
+}
+
+._fullPageContainer_18pcu_41 ._rightContainer_18pcu_167 ._courseHeading_18pcu_177 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 140%;
+    color: #263238;
+    margin-bottom: 12px;
+}
+
+._fullPageContainer_18pcu_41 ._rightContainer_18pcu_167 ._mainContainer_18pcu_184 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+._progressChip_18pcu_190 {
+    font-size: 10px;
+    border: 1px solid rgba(107, 64, 36, .1);
+    padding: 0 8px;
+    border-radius: 2px;
+    margin-left: 6px;
+    height: 16px;
+}
+
+._cards__container_18pcu_199 {
+    display: flex;
+    gap: 16px;
+    overflow: auto;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px 0 56px;
+}
+
+@media (max-width: 499px) {
+    ._cards__container_18pcu_199 ._card_18pcu_199 {
+        width: 100%;
+    }
+}
+
+._cards__container_18pcu_199 ._learning__card_18pcu_212 {
+    padding: 16px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    width: 208px;
+    height: 170px;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+@media (max-width: 499px) {
+    ._cards__container_18pcu_199 ._learning__card_18pcu_212 {
+        width: 100%;
+    }
+}
+
+._cards__container_18pcu_199 ._learning__card_18pcu_212 ._imageContainer_18pcu_227 {
+    display: flex;
+    justify-content: space-between;
+}
+
+._cards__container_18pcu_199 ._learning__card_18pcu_212 ._course__icon_18pcu_231 {
+    border-radius: 8px;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+}
+
+._cards__container_18pcu_199 ._learning__card_18pcu_212 ._chip_18pcu_237 {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 140%;
+    color: #455a64;
+    padding: 2px 6px;
+    border-radius: 2px;
+    border: 1px solid #CFD8DC;
+    margin-bottom: 4px;
+    width: fit-content;
+}
+
+._cards__container_18pcu_199 ._learning__card_18pcu_212 ._course__title_18pcu_248 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #424242;
+    margin-bottom: 4px;
+    
+}
+
+._cards__container_18pcu_199 ._learning__card_18pcu_212 ._course__subtitle_18pcu_255 {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    color: #757575;
+}
+
+._cards__container_18pcu_199 ._learning__card_18pcu_212:hover {
+    box-shadow: 0 2px 10px #0000001a;
+}
+
+._feedbackContainer_18pcu_265 {
+    display: flex;
+    gap: 6px;
+}
+
+._feedbackContainer_18pcu_265 ._addIcon_18pcu_269 {
+    margin-top: 3px;
+    background: url(https://cdn.codechef.com/images/self-learning/add-feedback.png) no-repeat 0px 0px;
+    width: 34px;
+}
+
+@media (max-width: 499px) {
+    ._feedbackContainer_18pcu_265 ._addIcon_18pcu_269 {
+        width: 54px;
+    }
+}
+
+._feedbackContainer_18pcu_265 ._paraText_18pcu_279 {
+    font-size: 14px;
+    margin-top: -4px;
+    line-height: 28px;
+    margin-bottom: 12px;
+}
+
+._feedbackContainer_18pcu_265 ._paraText_18pcu_279 ._mLink_18pcu_285 {
+    line-height: 14px;
+    color: #2a67b1;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+._feedbackContainer_18pcu_265 ._paraText_18pcu_279 ._mLink_18pcu_285:hover {
+    text-decoration: underline;
+}
+
+
